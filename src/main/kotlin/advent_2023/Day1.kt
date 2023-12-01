@@ -14,17 +14,23 @@ class Day1 {
             .sumOf { ("" + it.first() + it.last()).toInt() })
 
         println("Part2: " + calibrationDocument
-            .map { replaceNumbers(it) }
+            .map { insertNumbers(it) }
             .map { character -> character.filter { it.isDigit() } }
             .sumOf { ("" + it.first() + it.last()).toInt() })
     }
 
-    private fun replaceNumbers(input: String) : String {
+    private fun insertNumbers(input: String) : String {
         var output = input
-        val firstFind = output.findAnyOf(spelledDigits)?.second
-        firstFind?.let { output = output.replace(it, (spelledDigits.indexOf(it)+1).toString()) }
-        val lastFind = output.findLastAnyOf(spelledDigits)?.second
-        lastFind?.let { output = output.replace(it, (spelledDigits.indexOf(it)+1).toString()) }
+        val firstFind = output.findAnyOf(spelledDigits)
+        firstFind?.let {
+            output = output.addStringAtIndex((spelledDigits.indexOf(it.second)+1).toString(), it.first) }
+        val lastFind = output.findLastAnyOf(spelledDigits)
+        lastFind?.let {
+            output = output.addStringAtIndex(
+                (spelledDigits.indexOf(it.second)+1).toString(), it.first + it.second.length) }
         return output
     }
+
+    fun String.addStringAtIndex(string: String, index: Int) =
+        StringBuilder(this).apply { insert(index, string) }.toString()
 }
