@@ -1,7 +1,6 @@
 package advent_2023
 
 import java.io.FileReader
-import java.math.BigInteger
 import kotlin.math.pow
 
 class Day12 {
@@ -39,7 +38,7 @@ class Day12 {
         val conditionsArray = conditions.toCharArray()
         val markedDamaged = conditions.count { it == '#' }
         var variants = 0
-        val regex = createRegex(damageList, conditions.length)
+        val regex = createRegex(damageList)
         val wildcardIndexes = mutableListOf<Int>()
         val damagedSprings = damageList.sum()
         conditions.forEachIndexed { index, c -> if (c == '?') wildcardIndexes.add(index) }
@@ -60,7 +59,7 @@ class Day12 {
         return variants
     }
 
-    private fun createRegex(damageList: List<Int>, length: Int): Regex {
+    private fun createRegex(damageList: List<Int>): Regex {
         var regex = "[.]*"
         damageList.forEachIndexed { index, damage ->
             regex += "[#]{$damage}"
