@@ -16,8 +16,8 @@ fun main(args: Array<String>) {
 //    Day13().process(args)
 //    Day14().process(args)
 //    Day15().process(args)
-//    Day16().process(args)
+    Day16().process(args)
 //    Day18().process(args)
-    Day21().process(args)
+//    Day21().process(args)
 //    Day22().process(args)
 }
