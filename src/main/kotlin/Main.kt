@@ -16,8 +16,24 @@ fun main(args: Array<String>) {
 //    Day13().process(args)
 //    Day14().process(args)
 //    Day15().process(args)
-    Day16().process(args)
+//    Day16().process(args)
+    Day17().process(args)
 //    Day18().process(args)
 //    Day21().process(args)
 //    Day22().process(args)
 }
+
+enum class Direction {
+    NORTH, EAST, SOUTH, WEST;
+
+    fun opposite(): Direction {
+        return when(this) {
+            NORTH -> SOUTH
+            EAST -> WEST
+            SOUTH -> NORTH
+            WEST -> EAST
+        }
+    }
+}
+
+data class Position (val x: Int, val y: Int)
