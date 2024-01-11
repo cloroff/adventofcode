@@ -1,5 +1,6 @@
 package advent_2023
 
+import Position
 import java.io.FileReader
 
 class Day22 {
@@ -114,8 +115,6 @@ data class Brick (
 }
 
 data class Coordinate (val x: Int, val y: Int, var z: Int)
-
-data class Position (val x: Int, val y: Int)
 
 data class Content (var z: Int, var brick: Brick?)
 
