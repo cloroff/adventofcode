@@ -19,7 +19,8 @@ fun main(args: Array<String>) {
 //    Day16().process(args)
 //    Day17().process(args)
 //    Day18().process(args)
-    Day19().process(args)
+//    Day19().process(args)
+    Day20().process(args)
 //    Day21().process(args)
 //    Day22().process(args)
 }
