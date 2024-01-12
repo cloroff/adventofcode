@@ -1,5 +1,6 @@
 package advent_2023
 
+import Direction
 import java.io.FileReader
 
 class Day16 {
@@ -137,6 +138,3 @@ class Day16 {
     }
 }
 
-enum class Direction {
-    NORTH, EAST, SOUTH, WEST
-}
