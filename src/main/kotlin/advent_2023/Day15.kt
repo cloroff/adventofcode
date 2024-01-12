@@ -1,3 +1,5 @@
+package advent_2023
+
 import java.io.FileReader
 
 private const val STEP_REGEX_STRING = "(\\w+)([-=])(\\d*)"
