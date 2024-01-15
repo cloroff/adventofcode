@@ -20,9 +20,10 @@ fun main(args: Array<String>) {
 //    Day17().process(args)
 //    Day18().process(args)
 //    Day19().process(args)
-    Day20().process(args)
+//    Day20().process(args)
 //    Day21().process(args)
 //    Day22().process(args)
+    Day23().process(args)
 }
 
 enum class Direction {
